@@ -2,4 +2,7 @@ module github.com/simonbs/wut
 
 go 1.25.6
 
-require github.com/dustinkirkland/golang-petname v0.0.0-20260215035315-f0c533e9ce9b // indirect
+require (
+	github.com/codeglyph/go-dotignore/v2 v2.2.0
+	github.com/dustinkirkland/golang-petname v0.0.0-20260215035315-f0c533e9ce9b
+)

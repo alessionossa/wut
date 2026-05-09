@@ -10,6 +10,7 @@ import (
 	"github.com/simonbs/wut/src/context"
 	"github.com/simonbs/wut/src/git"
 	"github.com/simonbs/wut/src/worktree"
+	"github.com/simonbs/wut/src/worktreeinclude"
 )
 
 func cmdNew(args []string) {
@@ -71,6 +72,8 @@ func cmdNew(args []string) {
 	if _, err := git.Run(gitArgs, ctx.RepoRoot); err != nil {
 		fail(err.Error())
 	}
+
+	worktreeinclude.Copy(ctx.RepoRoot, worktreePath)
 
 	fmt.Printf("__WUT_CD__:%s\n", worktreePath)
 }
